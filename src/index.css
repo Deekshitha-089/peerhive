@@ -1,0 +1,179 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  
+  --font-heading: 'EB Garamond', serif;
+  --font-section: 'Cinzel', serif; /* Alternative for Gatefold Demi */
+  --font-ui: 'Syne', sans-serif;
+  --font-body: 'Helvetica', 'Inter', system-ui, sans-serif;
+}
+
+:root {
+  /* 
+    Strict Palette:
+    White — #FFFFFF (0 0% 100%)
+    Deep Plum — #6F4476 (292 27% 36%)
+    Dark Eggplant — #402342 (297 31% 20%)
+    Charcoal — #2E2E38 (240 10% 20%)
+    Light Lavender — #C9C1CB (288 8% 79%)
+    Soft Beige — #F5F1EA (40 27% 94%)
+    Honey Gold — #E6B422 (45 79% 52%)
+  */
+
+  --background: 0 0% 100%; /* White */
+  --foreground: 240 10% 20%; /* Charcoal */
+
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 20%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 20%;
+
+  --primary: 292 27% 36%; /* Deep Plum */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 40 27% 94%; /* Soft Beige */
+  --secondary-foreground: 292 27% 36%; /* Deep Plum text on beige */
+
+  --muted: 40 27% 94%; /* Soft Beige as muted bg */
+  --muted-foreground: 240 5% 40%; /* Lighter charcoal */
+
+  --accent: 288 8% 79%; /* Light Lavender */
+  --accent-foreground: 297 31% 20%; /* Dark Eggplant */
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 288 8% 79%; /* Light Lavender */
+  --input: 288 8% 79%;
+  --ring: 292 27% 36%; /* Deep Plum ring */
+
+  --radius: 0.5rem; /* 8px */
+
+  --sidebar: 297 31% 20%; /* Dark Eggplant */
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-primary: 292 27% 36%; /* Deep Plum */
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 292 27% 36%; /* Deep Plum */
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-border: 292 27% 30%;
+  --sidebar-ring: 45 79% 52%; /* Honey Gold */
+
+  --chart-1: 292 27% 36%;
+  --chart-2: 45 79% 52%;
+  --chart-3: 297 31% 20%;
+  --chart-4: 288 8% 79%;
+  --chart-5: 40 27% 94%;
+}
+
+.dark {
+  /* Dark mode not explicitly requested but good to have mapping just in case */
+  --background: 297 31% 20%; /* Dark Eggplant */
+  --foreground: 40 27% 94%; /* Soft Beige */
+  --card: 297 31% 15%;
+  --card-foreground: 40 27% 94%;
+  --popover: 297 31% 15%;
+  --popover-foreground: 40 27% 94%;
+  --primary: 292 27% 36%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 240 10% 20%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 240 10% 20%;
+  --muted-foreground: 288 8% 79%;
+  --accent: 292 27% 36%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 292 27% 30%;
+  --input: 292 27% 30%;
+  --ring: 288 8% 79%;
+  --sidebar: 240 10% 15%;
+  --sidebar-foreground: 288 8% 90%;
+  --sidebar-primary: 292 27% 36%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 292 27% 36%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-border: 240 10% 20%;
+  --sidebar-ring: 45 79% 52%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-body antialiased bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+  .font-section {
+    font-family: var(--font-section);
+  }
+  .font-ui {
+    font-family: var(--font-ui);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  
+  .text-deep-plum { color: hsl(292 27% 36%); }
+  .bg-deep-plum { background-color: hsl(292 27% 36%); }
+  
+  .text-dark-eggplant { color: hsl(297 31% 20%); }
+  .bg-dark-eggplant { background-color: hsl(297 31% 20%); }
+  
+  .text-light-lavender { color: hsl(288 8% 79%); }
+  .bg-light-lavender { background-color: hsl(288 8% 79%); }
+  
+  .text-soft-beige { color: hsl(40 27% 94%); }
+  .bg-soft-beige { background-color: hsl(40 27% 94%); }
+  
+  .text-honey-gold { color: hsl(45 79% 52%); }
+  .bg-honey-gold { background-color: hsl(45 79% 52%); }
+}
